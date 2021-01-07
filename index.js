@@ -1,7 +1,7 @@
 const { getLevels } = require('./src/Utils.js');
 const User = require('./src/models/User.js');
 
-class HappyWheels {
+module.exports = class HappyWheels {
     static async searchLevels(query, options = {}) {
         const action = 'search_by_' + (options.searchby || 'name');
         
@@ -34,7 +34,3 @@ class HappyWheels {
         return user.fetchProfile();
     };
 };
-
-HappyWheels.getLevelById(10576861).then(async (level) => {
-    console.log(level)
-});
